@@ -1,4 +1,4 @@
-# Moment-Not-Open-Source
+# Complex CNN for Doppler Ambiguity
 This repo is based on my Diplom thesis.
 
 ## Introduction
@@ -9,7 +9,7 @@ Eample of the raw Dataset is on https://ieee-dataport.org/documents/doppler-ambi
 
 ### Input
 
-The input is called range-dopller-map:
+The input is called range-dopller-map with onw target:
 
 ![image](https://user-images.githubusercontent.com/123400810/220657220-25804278-aab1-4522-89fc-795c18d1685f.png)
 
@@ -51,9 +51,17 @@ Added functions by me:
 ## prepare_dataset.py
 This script provides various functions to preprocess the raw dataset.
 
-At the begin it is function cfar_rect. With this function the target can be detcetd. And the Area is called Region of Interest (ROI) 
+At the begin it is function cfar_rect. With this function the target can be detcetd. And the Area is called Region of Interest (ROI). The picture below is an example for two targets:
 
-Provided functions are:
+![image](https://user-images.githubusercontent.com/123400810/220660636-4098842a-a03d-4cf5-9d3f-64a8e11ed4d4.png)
+
+After using cfar_rect we will get two ROIs, because we have two targets. 
+
+After function cfar_rect, it is the main body for processing dataset.
+
+Provided functions for processing dataset:
+
+
 
 
 ## baseline.py	
