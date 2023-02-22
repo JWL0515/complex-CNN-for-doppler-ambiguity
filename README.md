@@ -67,7 +67,14 @@ After function cfar_rect, it is the main body class PrepareDataset for processin
 Provided functions for processing dataset:
 
 
+### how to use:
+Details are in script. Here is only the quick review.
 
+create one obejct firstly:
+preparedata = PrepareDataset()
+
+Then you can use function now:
+preparedata.process_normalize()
 
 ## baseline.py	
 This script shows the structure of CNN and the training- and testing phase. It provided only a idea, the reason is:
@@ -77,3 +84,5 @@ The purpose of this thsis is to explore the feasibility and try to make the para
 ## results
 
 Only the main results will be showed.
+
+### Data
