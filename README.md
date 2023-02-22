@@ -62,7 +62,7 @@ cfar is basis for doppler ambiguity problem solving. After using cfar, we will g
 - we have to train model with data in dimension 50x64. This make model very big compare with data after cfar in like 9x7.
 - assume we have 2 targes, and each target have 4 possible velocty. Then we will have 16 possible combinations. But if we use cfar, we will get 2 single ROI. This means we acctually have exact only 4 possible velocty for each target. This make preparing dataset also much easily.
 
-After function cfar_rect, it is the main body for processing dataset.
+After function cfar_rect, it is the main body class PrepareDataset for processing dataset.
 
 Provided functions for processing dataset:
 
