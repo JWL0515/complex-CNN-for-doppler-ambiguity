@@ -5,7 +5,8 @@ This repo is based on my Diplom thesis. The main Konzept is to sove classificati
 The goal is solving the doppler ambiguity problem. That means using complex range-Doppler maps that contain complex numbers to train CNN models. To achieve this, we need CNN which is applicable to complex numbers. The code in order complexPyTorch is based on the open source [complexPyTorch](https://github.com/wavefrontshaping/complexPyTorch). 
 
 ## Dataset
-Eample of the raw Dataset is on https://ieee-dataport.org/documents/doppler-ambiguity-dataset. All data is generated using Matlab to simulate a 77GHz FMCW millimeter-wave radar sensing in the road scenario.
+Sorry, i can not upload example dataset here. The example dataset is already big. 
+Example Dataset is on [DOPPLER AMBIGUITY DATASET](https://ieee-dataport.org/documents/doppler-ambiguity-dataset). All data is generated using Matlab to simulate a 77GHz FMCW millimeter-wave radar sensing in the road scenario. 
 
 ### Input
 
