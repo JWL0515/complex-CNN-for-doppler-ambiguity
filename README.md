@@ -1,12 +1,33 @@
 # Moment-Not-Open-Source
-Due to possible publishing reasons, it is not open source moment.
+This repo is based on my Diplom thesis.
 
 ## Introduction
-This repo is based on my Diplom thesis. The goal of my thesis is solving the doppler ambiguity problem. That means using complex range-Doppler maps that contain complex numbers to train CNN models. To achieve this, we need CNN which is applicable to complex numbers. The code in order complexPyTorch is based on the open source complexPyTorch LINK. 
+The goal is solving the doppler ambiguity problem. That means using complex range-Doppler maps that contain complex numbers to train CNN models. To achieve this, we need CNN which is applicable to complex numbers. The code in order complexPyTorch is based on the open source [complexPyTorch](https://github.com/wavefrontshaping/complexPyTorch). 
 
-## Installation
+## Dataset
+Eample of the raw Dataset is on https://ieee-dataport.org/documents/doppler-ambiguity-dataset. All data is generated using Matlab to simulate a 77GHz FMCW millimeter-wave radar sensing in the road scenario.
 
-pip install 
+### Input
+
+The input is called range-dopller-map:
+
+![image](https://user-images.githubusercontent.com/123400810/220657220-25804278-aab1-4522-89fc-795c18d1685f.png)
+
+This is the processed data with python. The input is complex numbers. In this picture, the dimension of input is 50x64. The dimension of raw data is 1024x64.
+
+### label
+
+The label is called Factor 𝐹. It is based on this formel:
+
+𝑣_𝑐𝑜𝑟𝑟𝑒𝑐𝑡=𝑣_𝑑𝑒𝑡+2𝐹𝑣_𝑚𝑎𝑥
+
+The 𝑣_𝑐𝑜𝑟𝑟𝑒𝑐𝑡, 𝑣_𝑑𝑒𝑡 are the ground truth velocity of target and the measured velocity of target.
+
+The 𝑣_𝑚𝑎𝑥 is the maximal measurable velocity of radar. 
+
+The 𝑣_𝑐𝑜𝑟𝑟𝑒𝑐𝑡, 𝑣_𝑑𝑒𝑡, 𝑣_𝑚𝑎𝑥 can be collected while simulating with Matlab.
+
+If you are interessed in this formel, i highly recommend you to read [Doppler disambiguation in MIMO FMCW radars with binary phase modulation](https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/rsn2.12063).
 
 ## Added functions in complexPyTorch
 
@@ -27,13 +48,15 @@ Added functions by me:
   - ComplexAvgPool3d
   - ComplexMaxPool3d
 
-## Dataset
-Eample of the raw Dataset is on https://ieee-dataport.org/documents/doppler-ambiguity-dataset. All data is generated using Matlab to simulate a 77GHz FMCW millimeter-wave radar sensing in the road scenario.
-
 ## prepare_dataset.py
 This script provides various functions to preprocess the raw dataset.
+
+At the begin it is function cfar_rect. With this function the target can be detcetd. And the Area is called Region of Interest (ROI) 
+
 Provided functions are:
 
 
 ## baseline.py	
-This script shows the structure of CNN and the training- and testing phase. 
+This script shows the structure of CNN and the training- and testing phase. It provided only a idea, the reason is:
+
+The purpose of this thsis is to explore the feasibility and try to make the parameters of the model as few as possible, the structure of the model is very simple and parameters are also not 'perfect'. 
