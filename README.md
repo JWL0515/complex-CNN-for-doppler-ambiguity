@@ -9,7 +9,7 @@ Eample of the raw Dataset is on https://ieee-dataport.org/documents/doppler-ambi
 
 ### Input
 
-The input is called range-dopller-map with onw target:
+The input is called range-dopller-map with one target:
 
 ![image](https://user-images.githubusercontent.com/123400810/220657220-25804278-aab1-4522-89fc-795c18d1685f.png)
 
@@ -51,7 +51,7 @@ Added functions by me:
 ## prepare_dataset.py
 This script provides various functions to preprocess the raw dataset.
 
-At the begin it is function cfar_rect. With this function the target can be detcetd. And the Area is called Region of Interest (ROI). The picture below is an example for two targets:
+At the begin it is function cfar_rect. cfar means [Constant false alarm rate](https://en.wikipedia.org/wiki/Constant_false_alarm_rate). With this function the target can be detcetd. And the Area is called Region of Interest (ROI). The picture below is an example for two targets:
 
 ![image](https://user-images.githubusercontent.com/123400810/220660636-4098842a-a03d-4cf5-9d3f-64a8e11ed4d4.png)
 
@@ -68,3 +68,7 @@ Provided functions for processing dataset:
 This script shows the structure of CNN and the training- and testing phase. It provided only a idea, the reason is:
 
 The purpose of this thsis is to explore the feasibility and try to make the parameters of the model as few as possible, the structure of the model is very simple and parameters are also not 'perfect'. 
+
+## results
+
+Only the main results will be showed.
