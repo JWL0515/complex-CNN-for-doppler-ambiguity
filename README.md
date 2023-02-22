@@ -79,7 +79,7 @@ The main functions for processing dataset:
 - balance_label_factor: balace dataset based on factor
 - balance_label_velocity: balance dataset based on velocity range
 
-### how to use:
+### How to use:
 Details are in script. Here is only the quick review.
 
 create one obejct firstly:
@@ -93,7 +93,7 @@ This script shows the structure of CNN and the training- and testing phase. It p
 
 The purpose of this thsis is to explore the feasibility and try to make the parameters of the model as few as possible, the structure of the model is very simple and parameters are also not 'perfect'. 
 
-## results
+## Results
 
 Only the main results will be showed. All results are on test dataset.
 
@@ -114,4 +114,13 @@ The number near the color circle is the total params. x-achse is the total mult-
 
 Accuracy is 77.5%.
 
+## Summary
 
+- Using AI can solve doppler ambiguity problem for one target and multiple target.
+- 2D CNN has the best performence (accuracy, computation and parameters). 
+
+## Futher Work
+
+- collect more data for train and find better parameters for models
+- collect real worl data and use them to test
+- imporve cfar
