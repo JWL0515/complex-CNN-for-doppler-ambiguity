@@ -95,6 +95,23 @@ The purpose of this thsis is to explore the feasibility and try to make the para
 
 ## results
 
-Only the main results will be showed.
+Only the main results will be showed. All results are on test dataset.
 
-### Data
+### One Target - Dataset with Dimension 1x64 (Doppler-Vector) for 1D CNN
+![image](https://user-images.githubusercontent.com/123400810/220673252-0ec8521d-ae26-4aee-9e06-97db30f4979c.png)
+
+### One Target - Dataset with Dimension 50x64 for 2D and 3D CNN
+![models_comparison](https://user-images.githubusercontent.com/123400810/220674490-6c156cd5-bcd7-4844-9ffd-29fb1743854b.png)
+
+The number near the color circle is the total params. x-achse is the total mult-adds (M). And y is the accuracy on test dataset.
+
+### One Target - Dataset with Dimension 7x7 for 2D and 3D CNN
+![models_comparison](https://user-images.githubusercontent.com/123400810/220674578-85354d86-9337-4a5c-bf76-0eac62165a8c.png)
+
+The number near the color circle is the total params. x-achse is the total mult-adds (M). And y is the accuracy on test dataset.
+
+### Two Targets - Dataset with Dimension 9x7 for 2D CNN
+
+Accuracy is 77.5%.
+
+
