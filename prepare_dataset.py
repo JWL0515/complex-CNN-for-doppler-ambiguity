@@ -311,10 +311,10 @@ class PrepareDataset:
 
     def process_decimate(self, path, start_row: int = 511, end_row: int = 561):
         """
-        compress Xbf.npy. oeiginal:1024x64 is compressed to 50x64.
+        decimate Xbf.npy. oeiginal:1024x64 is decimate to 50x64.
         :param path: path of label.csv.
-        :param start_row: first row for compressing.
-        :param end_row: last row for compressing.
+        :param start_row: first row for decimating.
+        :param end_row: last row for decimating.
         """
         data = pd.read_csv(os.path.join(path, 'label.csv'))
         new_path = f'{path}_decimated'
