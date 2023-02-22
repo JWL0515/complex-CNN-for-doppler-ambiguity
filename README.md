@@ -1,5 +1,5 @@
 # Complex CNN for Doppler Ambiguity
-This repo is based on my Diplom thesis.
+This repo is based on my Diplom thesis. The main Konzept is to sove classification probelm.
 
 ## Introduction
 The goal is solving the doppler ambiguity problem. That means using complex range-Doppler maps that contain complex numbers to train CNN models. To achieve this, we need CNN which is applicable to complex numbers. The code in order complexPyTorch is based on the open source [complexPyTorch](https://github.com/wavefrontshaping/complexPyTorch). 
@@ -56,6 +56,11 @@ At the begin it is function cfar_rect. cfar means [Constant false alarm rate](ht
 ![image](https://user-images.githubusercontent.com/123400810/220660636-4098842a-a03d-4cf5-9d3f-64a8e11ed4d4.png)
 
 After using cfar_rect we will get two ROIs, because we have two targets. 
+
+cfar is basis for doppler ambiguity problem solving. After using cfar, we will get multiple single ROI. This make the Algorithm keeping simple. If we do not use cfar, we will get the problems below: 
+
+- we have to train model with data in dimension 50x64. This make model very big compare with data after cfar in like 9x7.
+- assume we have 2 targes, and each target have 4 possible velocty. Then we will have 16 possible combinations. But if we use cfar, we will get 2 single ROI. This means we acctually have exact only 4 possible velocty for each target. This make preparing dataset also much easily.
 
 After function cfar_rect, it is the main body for processing dataset.
 
