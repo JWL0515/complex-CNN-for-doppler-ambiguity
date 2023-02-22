@@ -65,8 +65,19 @@ cfar is basis for doppler ambiguity problem solving. After using cfar, we will g
 
 After function cfar_rect, it is the main body class PrepareDataset for processing dataset.
 
-Provided functions for processing dataset:
+The main functions for processing dataset:
 
+- convert_mat_dataset: convert mat data to label.csv, Xbf.npy, Xcube.npy
+- process_decimate: decimate Xbf.npy. original:1024x64. After decimating: 50x64 (This is depend on your radar setting).
+- process_normalize: do normalization on whole dataset
+- process_doppler_vector: get doppler vector datase
+- process_multiple_frames: combined serveal .npy. Function is like [HMDB51](https://pytorch.org/vision/main/generated
+        /torchvision.datasets.HMDB51.html#torchvision.datasets.HMDB51) in PyTorch.
+- process_frame_minus_frame: do frame2-frame1, frame3-frame2...
+- process_cfar_rect_single_target: get CFAR-ROI dataset for one target
+- process_cfar_rect_multiple_targets: get CFAR-ROI dataset for multiple target
+- balance_label_factor: balace dataset based on factor
+- balance_label_velocity: balance dataset based on velocity range
 
 ### how to use:
 Details are in script. Here is only the quick review.
