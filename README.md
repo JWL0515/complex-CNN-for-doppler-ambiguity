@@ -184,6 +184,7 @@ Accuracy is 77.5%.
 
 - Using Deep Learning can solve doppler ambiguity problem for one target and multiple target.
 - 2D CNN with 1 frame has the best performence (accuracy, computation and parameters). 
+(- Model with 2D-CNN, 1 frame and Dimension 9x7 has the best performence. This is based on experiments)
 
 ## Futher Work
 
