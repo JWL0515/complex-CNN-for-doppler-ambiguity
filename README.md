@@ -75,8 +75,6 @@ The code is based on **[Radar Signal Simulation and Processing for Automated Dri
 ### helperAutoDrivingRadarSigProc.m
 It is almost like the original one from Matlab example.
 
-
-
 ## Python
 Python is for data processing and model training and testing.
 
@@ -178,6 +176,7 @@ The number near the color circle is the total params. x-achse is the total mult-
 The number near the color circle is the total params. x-achse is the total mult-adds (M). And y is the accuracy on test dataset.
 
 ### Two Targets - Dataset with Dimension 9x7 for 2D CNN
+The model for two targets is exactly the model for 1 target with Dataset with Dimension 9x7.
 
 Accuracy is 77.5%.
 
