@@ -45,27 +45,27 @@ The code is based on **[Radar Signal Simulation and Processing for Automated Dri
 
 ### Added functions in complexPyTorch
 
-The orginal is provided by **[wavefrontshaping]([https://github.com/wavefrontshaping/complexPyTorch](https://github.com/wavefrontshaping))**. More details about complexPyTorch is **[here](https://github.com/wavefrontshaping/complexPyTorch)**
+The orginal is provided by **[wavefrontshaping](https://github.com/wavefrontshaping)**. More details about complexPyTorch is **[here](https://github.com/wavefrontshaping/complexPyTorch)**
 
 Added functions by me:
 - in **complexFunctions.py**:
-  - complex_dropout3d
-  - complex_avg_pool3d
-  - _retrieve_elements_from_indices_3D
-  - complex_max_pool3d
-  - complex_leaky_relu
+  - **complex_dropout3d**
+  - **complex_avg_pool3d**
+  - **_retrieve_elements_from_indices_3D**
+  - **complex_max_pool3d**
+  - **complex_leaky_relu**
 
 - in **complexLayers.py**:
-  - ComplexConv3d
-  - NaiveComplexBatchNorm3d
-  - ComplexDropout3d
-  - ComplexAvgPool3d
-  - ComplexMaxPool3d
+  - **ComplexConv3d**
+  - **NaiveComplexBatchNorm3d**
+  - **ComplexDropout3d**
+  - **ComplexAvgPool3d**
+  - **ComplexMaxPool3d**
 
 ### prepare_dataset.py
 This script provides various functions to preprocess the raw dataset.
 
-At the begin it is function cfar_rect. cfar means **[Constant false alarm rate](https://en.wikipedia.org/wiki/Constant_false_alarm_rate)**. With this function the target can be detcetd. And the Area is called **Region of Interest (ROI)**. The picture below is an example for two targets:
+At the begin it is function **cfar_rect**. cfar means **[Constant false alarm rate](https://en.wikipedia.org/wiki/Constant_false_alarm_rate)**. With this function the target can be detcetd. And the Area is called **Region of Interest (ROI)**. The picture below is an example for **two targets**:
 
 ![image](https://user-images.githubusercontent.com/123400810/220660636-4098842a-a03d-4cf5-9d3f-64a8e11ed4d4.png)
 
@@ -76,7 +76,7 @@ cfar is basis for doppler ambiguity problem solving. After using cfar, we will g
 - we have to train model with data in dimension 50x64. This make model very big compare with data after cfar in like 9x7.
 - assume we have 2 targes, and each target have 4 possible velocty. Then we will have 16 possible combinations. But if we use cfar, we will get 2 single ROI. This means we acctually have exact only 4 possible velocty for each target. This make preparing dataset also much easily.
 
-After function cfar_rect, it is the main body class PrepareDataset for processing dataset.
+After function cfar_rect, it is the main body **class PrepareDataset** for processing dataset.
 
 The main functions for processing dataset:
 
