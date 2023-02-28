@@ -134,11 +134,11 @@ Details are in script. Here is only the quick review.
 
 create one obejct firstly:
 
-                                                 preparedata = PrepareDataset()
+                                            preparedata = PrepareDataset()
                     
 Then you can use function now:
 
-                                                 preparedata.process_normalize()
+                                            preparedata.process_normalize()
 
 ### baseline.py	
 This script shows the structure of CNN and the training- and testing phase. It provided only a idea, the reason is:
@@ -158,10 +158,22 @@ Only the main results will be showed. All results are tested with test dataset. 
 ### One Target - Dataset with Dimension 50x64 for 2D and 3D CNN
 ![models_comparison](https://user-images.githubusercontent.com/123400810/220674490-6c156cd5-bcd7-4844-9ffd-29fb1743854b.png)
 
+**Conv3D_fna** means traning CNN 3D using dataset with n frames.
+
+**Conv2D_fna** means traning CNN 2D using dataset with n frame(s).
+
+**Conv2D_delta1a** means traning CNN 2D using dataset with 1 frame (this frame = frame2 - frame1).
+
 The number near the color circle is the total params. x-achse is the total mult-adds (M). And y is the accuracy on test dataset.
 
 ### One Target - Dataset with Dimension 7x7 for 2D and 3D CNN
 ![models_comparison](https://user-images.githubusercontent.com/123400810/220674578-85354d86-9337-4a5c-bf76-0eac62165a8c.png)
+
+**Conv3D_fna** means traning CNN 3D using dataset with n frames.
+
+**Conv2D_fna** means traning CNN 2D using dataset with n frame(s).
+
+**Conv2D_delta1a** means traning CNN 2D using dataset with 1 frame (this frame = frame2 - frame1).
 
 The number near the color circle is the total params. x-achse is the total mult-adds (M). And y is the accuracy on test dataset.
 
@@ -172,7 +184,7 @@ Accuracy is 77.5%.
 ## Summary
 
 - Using Deep Learning can solve doppler ambiguity problem for one target and multiple target.
-- 2D CNN has the best performence (accuracy, computation and parameters). 
+- 2D CNN with 1 frame has the best performence (accuracy, computation and parameters). 
 
 ## Futher Work
 
