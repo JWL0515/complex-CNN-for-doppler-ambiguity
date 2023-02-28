@@ -1,5 +1,7 @@
 # Complex CNN for Doppler Ambiguity
-This repo is based on my Diplom thesis. The main Konzept is to sove classification probelm.
+This repo is based on my Diplom thesis. The main Konzept is to sove **classification probelm**. 
+
+Two programming languages are used: **Python** and **Matlab**.
 
 ## Introduction
 The goal is solving the doppler ambiguity problem. That means using complex range-Doppler maps that contain complex numbers to train CNN models. To achieve this, we need CNN which is applicable to complex numbers. The code in order complexPyTorch is based on the open source **[complexPyTorch](https://github.com/wavefrontshaping/complexPyTorch)**. 
@@ -10,11 +12,11 @@ Example Dataset is on [DOPPLER AMBIGUITY DATASET](https://ieee-dataport.org/docu
 
 ### Input
 
-The input is called range-dopller-map with one target:
+The input is called **range-dopller-map** with one target:
 
 ![image](https://user-images.githubusercontent.com/123400810/220657220-25804278-aab1-4522-89fc-795c18d1685f.png)
 
-This is the processed data with python. The input is complex numbers. In this picture, the dimension of input is 50x64. The dimension of raw data is **1024x64**.
+This is the processed data with python. The input is **complex numbers**. In this picture, the dimension of input is 50x64. The dimension of **raw data** is **1024x64**.
 
 ### label
 
@@ -28,12 +30,12 @@ The **𝑣_𝑚𝑎𝑥** is the maximal measurable velocity of radar.
 
 The **𝑣_𝑐𝑜𝑟𝑟𝑒𝑐𝑡**, **𝑣_𝑑𝑒𝑡**, **𝑣_𝑚𝑎𝑥** can be collected while simulating with Matlab.
 
-If you are interessed in this formel, i highly recommend you to read [Doppler disambiguation in MIMO FMCW radars with binary phase modulation](https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/rsn2.12063).
+If you are interessed in this formel, i highly recommend you to read **[Doppler disambiguation in MIMO FMCW radars with binary phase modulation](https://ietresearch.onlinelibrary.wiley.com/doi/10.1049/rsn2.12063)**.
 
 ## Matlab
 Matlab is for dataset generation.
 
-The code is based on [Radar Signal Simulation and Processing for Automated Driving](https://ww2.mathworks.cn/help/radar/ug/radar-signal-simulation-and-processing-for-automated-driving.html). Used toolboxs are: **Automated Driving Toolbox** and **Radar Toolbox**.
+The code is based on **[Radar Signal Simulation and Processing for Automated Driving](https://ww2.mathworks.cn/help/radar/ug/radar-signal-simulation-and-processing-for-automated-driving.html)**. Used toolboxs are: **Automated Driving Toolbox** and **Radar Toolbox**.
 
 ### Added functions
 
@@ -43,7 +45,7 @@ The code is based on [Radar Signal Simulation and Processing for Automated Drivi
 
 ### Added functions in complexPyTorch
 
-The orginal is provided by [wavefrontshaping]([https://github.com/wavefrontshaping/complexPyTorch](https://github.com/wavefrontshaping)). More details about complexPyTorch is [here](https://github.com/wavefrontshaping/complexPyTorch)
+The orginal is provided by **[wavefrontshaping]([https://github.com/wavefrontshaping/complexPyTorch](https://github.com/wavefrontshaping))**. More details about complexPyTorch is **[here](https://github.com/wavefrontshaping/complexPyTorch)**
 
 Added functions by me:
 - in **complexFunctions.py**:
@@ -63,7 +65,7 @@ Added functions by me:
 ### prepare_dataset.py
 This script provides various functions to preprocess the raw dataset.
 
-At the begin it is function cfar_rect. cfar means [Constant false alarm rate](https://en.wikipedia.org/wiki/Constant_false_alarm_rate). With this function the target can be detcetd. And the Area is called Region of Interest (ROI). The picture below is an example for two targets:
+At the begin it is function cfar_rect. cfar means **[Constant false alarm rate](https://en.wikipedia.org/wiki/Constant_false_alarm_rate)**. With this function the target can be detcetd. And the Area is called **Region of Interest (ROI)**. The picture below is an example for two targets:
 
 ![image](https://user-images.githubusercontent.com/123400810/220660636-4098842a-a03d-4cf5-9d3f-64a8e11ed4d4.png)
 
@@ -78,17 +80,17 @@ After function cfar_rect, it is the main body class PrepareDataset for processin
 
 The main functions for processing dataset:
 
-- convert_mat_dataset: convert mat data to label.csv, Xbf.npy, Xcube.npy
-- process_decimate: decimate Xbf.npy. original:1024x64. After decimating: 50x64 (This is depend on your radar setting).
-- process_normalize: do normalization on whole dataset
-- process_doppler_vector: get doppler vector datase
-- process_multiple_frames: combined serveal .npy. Function is like [HMDB51](https://pytorch.org/vision/main/generated
+- **convert_mat_dataset**: convert mat data to label.csv, Xbf.npy, Xcube.npy
+- **process_decimate**: decimate Xbf.npy. original:1024x64. After decimating: 50x64 (This is depend on your radar setting).
+- **process_normalize**: do normalization on whole dataset
+- **process_doppler_vector**: get doppler vector datase
+- **process_multiple_frames**: combined serveal .npy. Function is like [HMDB51](https://pytorch.org/vision/main/generated
         /torchvision.datasets.HMDB51.html#torchvision.datasets.HMDB51) in PyTorch.
-- process_frame_minus_frame: do frame2-frame1, frame3-frame2...
-- process_cfar_rect_single_target: get CFAR-ROI dataset for one target
-- process_cfar_rect_multiple_targets: get CFAR-ROI dataset for multiple target
-- balance_label_factor: balace dataset based on factor
-- balance_label_velocity: balance dataset based on velocity range
+- **process_frame_minus_frame**: do frame2-frame1, frame3-frame2...
+- **process_cfar_rect_single_target**: get CFAR-ROI dataset for one target
+- **process_cfar_rect_multiple_targets**: get CFAR-ROI dataset for multiple target
+- **balance_label_factor**: balace dataset based on factor
+- **balance_label_velocity**: balance dataset based on velocity range
 
 #### How to use:
 Details are in script. Here is only the quick review.
