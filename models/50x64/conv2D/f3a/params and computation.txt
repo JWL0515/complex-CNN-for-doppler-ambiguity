@@ -1,3 +1,0 @@
-Total params: 53,762
-
-Total mult-adds (M): 106.45
