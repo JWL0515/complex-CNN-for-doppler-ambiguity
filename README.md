@@ -37,7 +37,41 @@ Matlab is for dataset generation.
 
 The code is based on **[Radar Signal Simulation and Processing for Automated Driving](https://ww2.mathworks.cn/help/radar/ug/radar-signal-simulation-and-processing-for-automated-driving.html)**. Used toolboxs are: **Automated Driving Toolbox** and **Radar Toolbox**.
 
-### Added functions
+### load_radar_setting.m
+You can set radar parameters here.
+
+#### important parameters
+- **Two Modulations**: **TDM** and **BPM**.
+- **sender number** 
+- **receiver number** 
+
+### load_scenario_setting.m
+You can set drive scenario parameters here. 
+
+The **ego-car** does the **uniform motion**. And **non-ego cars** do the **uniform acceleration motion**.
+
+#### important parameters
+- **frame_rate** and **running_time**
+- **velocity of ego car** and **maxiaml velocity of non-ego cars**
+- **maxiaml acceleration of non-ego cars**
+- **RCS of non-ego cars**
+- **appear probability of non-ego cars**
+- **EXTRA**: **generate data within specific velocity range**
+
+### radar_signal_simulation.m
+The code is based on **[Radar Signal Simulation and Processing for Automated Driving](https://ww2.mathworks.cn/help/radar/ug/radar-signal-simulation-and-processing-for-automated-driving.html)**.
+
+#### important parameters
+- **display_scenario**: whether show video display
+- **save_Xcubes**: whether save Xcubes
+- **detect_object**:whether use CFAR to detect, 'no': no display, because no detect.
+- **deletle_record**: whether delete record if there is error 
+
+
+
+### helperAutoDrivingRadarSigProc.m
+It is almost like the original one from Matlab example.
+
 
 
 ## Python
