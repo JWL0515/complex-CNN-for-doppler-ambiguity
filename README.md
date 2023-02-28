@@ -1,5 +1,5 @@
 # Complex CNN for Doppler Ambiguity
-This repo is based on my Diplom thesis. The main Konzept is to sove **classification probelm**. 
+This repo is based on my Diplom thesis. The main Konzept is to solve **classification probelm**. 
 
 Two programming languages are used: **Python** and **Matlab**.
 
