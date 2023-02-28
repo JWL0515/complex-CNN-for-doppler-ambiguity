@@ -22,7 +22,7 @@ This is the processed data with python. The input is **complex numbers**. In thi
 
 The label is called **Factor 𝐹**. It is based on this formel:
 
-                                                 𝑣_𝑐𝑜𝑟𝑟𝑒𝑐𝑡=𝑣_𝑑𝑒𝑡+2𝐹𝑣_𝑚𝑎𝑥
+                                            𝑣_𝑐𝑜𝑟𝑟𝑒𝑐𝑡=𝑣_𝑑𝑒𝑡+2𝐹𝑣_𝑚𝑎𝑥
 
 The **𝑣_𝑐𝑜𝑟𝑟𝑒𝑐𝑡**, **𝑣_𝑑𝑒𝑡** are the ground truth velocity of target and the measured velocity of target.
 
