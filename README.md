@@ -75,6 +75,9 @@ The code is based on **[Radar Signal Simulation and Processing for Automated Dri
 ### helperAutoDrivingRadarSigProc.m
 It is almost like the original one from Matlab example.
 
+### run_loop.m
+run 'radar_signal_simulation.m' n times to collecte datas.
+
 ## Python
 Python is for data processing and model training and testing.
 
