@@ -22,7 +22,7 @@ This is the processed data with python. The input is **complex numbers**. In thi
 
 The label is called **Factor 𝐹**. It is based on this formel:
 
-                                                          𝑣_𝑐𝑜𝑟𝑟𝑒𝑐𝑡=𝑣_𝑑𝑒𝑡+2𝐹𝑣_𝑚𝑎𝑥
+                                                 𝑣_𝑐𝑜𝑟𝑟𝑒𝑐𝑡=𝑣_𝑑𝑒𝑡+2𝐹𝑣_𝑚𝑎𝑥
 
 The **𝑣_𝑐𝑜𝑟𝑟𝑒𝑐𝑡**, **𝑣_𝑑𝑒𝑡** are the ground truth velocity of target and the measured velocity of target.
 
@@ -36,6 +36,11 @@ If you are interessed in this formel, i highly recommend you to read **[Doppler 
 Matlab is for dataset generation.
 
 The code is based on **[Radar Signal Simulation and Processing for Automated Driving](https://ww2.mathworks.cn/help/radar/ug/radar-signal-simulation-and-processing-for-automated-driving.html)**. Used toolboxs are: **Automated Driving Toolbox** and **Radar Toolbox**.
+
+Example driving scenario for 2 targets:
+
+![image](https://user-images.githubusercontent.com/123400810/221910056-bf10b0d0-3551-4af4-8b2e-f7493e745347.png)
+
 
 ### load_radar_setting.m
 You can set radar parameters here.
@@ -67,15 +72,13 @@ The code is based on **[Radar Signal Simulation and Processing for Automated Dri
 - **detect_object**:whether use CFAR to detect, 'no': no display, because no detect.
 - **deletle_record**: whether delete record if there is error 
 
-
-
 ### helperAutoDrivingRadarSigProc.m
 It is almost like the original one from Matlab example.
 
 
 
 ## Python
-
+Python is for data processing and model training and testing.
 
 ### Added functions in complexPyTorch
 
@@ -108,7 +111,7 @@ After using cfar_rect we will get two ROIs, because we have two targets.
 cfar is basis for doppler ambiguity problem solving. After using cfar, we will get multiple single ROI. This make the Algorithm keeping simple. If we do not use cfar, we will get the problems below: 
 
 - we have to train model with data in dimension 50x64. This make model very big compare with data after cfar in like 9x7.
-- assume we have 2 targes, and each target have 4 possible velocty. Then we will have 16 possible combinations. But if we use cfar, we will get 2 single ROI. This means we acctually have exact only 4 possible velocty for each target. This make preparing dataset also much easily.
+- assume we have **2** targes, and each target have **4** possible velocty. Then we will have **1**6 possible combinations. But if we use cfar, we will get **2 single ROI**. This means we acctually have exact only 4 possible velocty for each target. This make preparing dataset also much easily.
 
 After function cfar_rect, it is the main body **class PrepareDataset** for processing dataset.
 
@@ -131,20 +134,23 @@ Details are in script. Here is only the quick review.
 
 create one obejct firstly:
 
-                                                          preparedata = PrepareDataset()
+                                                 preparedata = PrepareDataset()
                     
 Then you can use function now:
 
-                                                          preparedata.process_normalize()
+                                                 preparedata.process_normalize()
 
 ### baseline.py	
 This script shows the structure of CNN and the training- and testing phase. It provided only a idea, the reason is:
 
 The purpose of this thsis is to explore the feasibility and try to make the parameters of the model as few as possible, the structure of the model is very simple and parameters are also not 'perfect'. 
 
+## Models
+Some trained models are loaded. 
+
 ## Results
 
-Only the main results will be showed. All results are on test dataset.
+Only the main results will be showed. All results are tested with test dataset. And Dataset are generater with **TDM**.
 
 ### One Target - Dataset with Dimension 1x64 (Doppler-Vector) for 1D CNN
 ![image](https://user-images.githubusercontent.com/123400810/220673252-0ec8521d-ae26-4aee-9e06-97db30f4979c.png)
@@ -165,7 +171,7 @@ Accuracy is 77.5%.
 
 ## Summary
 
-- Using AI can solve doppler ambiguity problem for one target and multiple target.
+- Using Deep Learning can solve doppler ambiguity problem for one target and multiple target.
 - 2D CNN has the best performence (accuracy, computation and parameters). 
 
 ## Futher Work
