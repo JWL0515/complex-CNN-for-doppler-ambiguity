@@ -122,8 +122,7 @@ The main functions for processing dataset:
 - **process_decimate**: decimate Xbf.npy. original:1024x64. After decimating: 50x64 (This is depend on your radar setting).
 - **process_normalize**: do normalization on whole dataset
 - **process_doppler_vector**: get doppler vector datase
-- **process_multiple_frames**: combined serveal .npy. Function is like [HMDB51](https://pytorch.org/vision/main/generated
-        /torchvision.datasets.HMDB51.html#torchvision.datasets.HMDB51) in PyTorch.
+- **process_multiple_frames**: combined serveal .npy. Function is like [HMDB51](https://pytorch.org/vision/main/generated/torchvision.datasets.HMDB51.html#torchvision.datasets.HMDB51) in PyTorch.
 - **process_frame_minus_frame**: do frame2-frame1, frame3-frame2...
 - **process_cfar_rect_single_target**: get CFAR-ROI dataset for one target
 - **process_cfar_rect_multiple_targets**: get CFAR-ROI dataset for multiple target
