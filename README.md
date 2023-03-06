@@ -16,7 +16,7 @@ The input is called **range-dopller-map** with one target:
 
 ![image](https://user-images.githubusercontent.com/123400810/220657220-25804278-aab1-4522-89fc-795c18d1685f.png)
 
-This is the processed data with python. The input is **complex numbers**. In this picture, the dimension of input is 50x64. The dimension of **raw data** is **1024x64**.
+This is the processed data with python. The input is **complex numbers**. In this picture, the dimension of input is **50x64**. The dimension of **raw data** is **1024x64**.
 
 ### label
 
